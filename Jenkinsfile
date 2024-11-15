@@ -19,7 +19,8 @@ pipeline {
             }
         stage('Ansible Playbook'){
             steps{
-             sh 'sudo chmod 400 key.pem'    
+             sh 'sudo chmod 400 key.pem'
+             sh 'sleep 10'
              sh 'ansible-playbook my_playbook.yml'
             }
         }
