@@ -20,7 +20,7 @@ pipeline {
             }
         stage('Ansible Playbook'){
             steps{
-             sh 'echo $SSH_KEY > key.pem'   
+             sh 'echo $SSH_KEY'   
              sh 'sudo chmod 400 key.pem'
              sh 'sleep 13'
              sh 'ansible-playbook my_playbook.yml'
