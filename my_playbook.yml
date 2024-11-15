@@ -1,0 +1,15 @@
+- name: play_1
+  hosts: my_ec2
+  gather_facts: false
+  tasks:
+  - name: update_cache
+    apt:
+      update_cache: yes
+  - name: install_nginx
+    apt: 
+      name: nginx
+      state: present
+  - service:
+      name: nginx
+      state: started
+      enabled: yes       
